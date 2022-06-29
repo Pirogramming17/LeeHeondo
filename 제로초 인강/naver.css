@@ -66,3 +66,22 @@
   padding: 0; /*4방향 모두 0으로*/
   outline: none; /*눌렀을때 생기는 테두리제거*/
 }
+
+#header-search fieldset button {
+  width: 49px;
+  height: 49px;
+  border: none;
+  padding: 0;
+  background: #03cf5d;
+}
+
+#search-image {
+  /* # 앞에 span 생략 */
+  background-image: url(./sp_search.png);
+  background-position: -3px -60px; /*사진 위치찾기*/
+  background-repeat: none;
+  width: 21px;
+  height: 21px;
+  display: inline-block; /*span은 기본 inline인데 inline은 크기 조절이 안된다.*/
+  margin: 14px; /*마진을 맞춰서 가운데정렬*/
+}
