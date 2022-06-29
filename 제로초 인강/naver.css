@@ -1,7 +1,25 @@
 /* 선택자(selector) -> html의 태그 선택*/
 /* Cascading Style Sheet */
 
+/* header-center h1
+자손선택자
+자식은 바로 안에 있는거 '>' 사용 효과 똑같아서 보통은 생략 */
+
 #header-center {
   margin: 0 auto;
   width: 1080px;
+}
+
+#header-search > h1 {
+  width: 280px;
+  display: inline-block;
+}
+
+#header-search h2 {
+  display: none;
+}
+
+#header-search fieldset {
+  width: 520px;
+  display: inline-block;
 }
