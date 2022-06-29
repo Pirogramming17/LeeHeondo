@@ -4,22 +4,52 @@
 /* header-center h1
 자손선택자
 자식은 바로 안에 있는거 '>' 사용 효과 똑같아서 보통은 생략 */
+/* #은 id 가리킴, div는 생략하능 시멘트는 안됨 */
+
+/* 클래스는 '.' 선택자 */
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  height: 1px;
+}
 
 #header-center {
+  /* margin: 0 auto -> 중앙정렬 */
   margin: 0 auto;
-  width: 1080px;
+  width: 1080px; /*꽉안차게 설정*/
+}
+/* a테그는 밑줄이 있을 수 있으니 없애주기 */
+#header-search a {
+  text-decoration: none;
 }
 
-#header-search > h1 {
-  width: 280px;
+/*block-> 전체 다 차지 inline-block-> 설정한 width, hight만큼 차지 inline-> 컨텐츠크기만큼 자동차지 */
+#header-search h1 {
+  width: 200px;
+  height: 48px;
   display: inline-block;
+  /* background-image: url(./sp_search.png);
+  background-position: -4px -4px;
+  background-repeat: no-repeat; 한번에! */
+  background: url(./sp_search.png) -4px -4px no-repeat;
 }
 
+#header-search h1 span {
+  display: none;
+}
 #header-search h2 {
   display: none;
 }
 
+/* margin->border->padding->contents */
 #header-search fieldset {
-  width: 520px;
+  margin-left: 20px;
+  /* 시계방향px */
+  padding: 12px 0 12px 10px;
+  width: 521px;
+  height: 49;
   display: inline-block;
+  border: 2px solid #03cf5d;
 }
