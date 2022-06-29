@@ -31,9 +31,21 @@ body {
   margin: 0 auto;
   width: 1080px; /*꽉안차게 설정*/
 }
+
+#header-top {
+  float: right;
+}
+
+#header-top span {
+  color: #888;
+  letter-spacing: -1px;
+  font-size: 11px;
+  line-height: 22px;
+}
 /* a테그는 밑줄이 있을 수 있으니 없애주기 */
 #header-search a {
   text-decoration: none;
+  clear: both; /*header-top의 float: right 헤제-> float공간만큼 내려옴*/
 }
 
 /*block-> 전체 다 차지 inline-block-> 설정한 width, hight만큼 차지 inline-> 컨텐츠크기만큼 자동차지 */
