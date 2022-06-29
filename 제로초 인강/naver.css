@@ -11,6 +11,12 @@
   box-sizing: border-box; /*모든 테그의 박스 크기는 컨텐츠가 아니라 볼더를 기준으로 해라*/
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .blind {
   /* 클래스는 '.' 선택자 */
   position: absolute;
@@ -96,4 +102,5 @@
 }
 
 /***position: 기본 static, relative는 자신static에서 설정한만큼 상대적으로 이동****/
-/* absolute는 자신의 컨테이닝블록(static이 아닌 가장 가까운 부모 테그)을 기반하여 위치  */
+/* absolute는 자신의 컨테이닝블록(static이나 relative인(-> inline이 아닌) 가장 가까운 부모 테그)을 기반하여 위치  */
+/* position: fixed 는 스크롤해도 위치그대로 */
