@@ -99,7 +99,7 @@ header {
   padding: 0; /*4방향 모두 0으로*/
   outline: none; /*눌렀을때 생기는 테두리제거*/
   vertical-align: top;
-  width: 405px; /*input은 기본 inline-block*/
+  width: 395px; /*input은 기본 inline-block*/
   height: 23px;
 }
 
@@ -112,6 +112,28 @@ header {
   position: absolute;
   right: -2px;
   top: -1px;
+}
+
+#search-keyboard {
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+  background-repeat: no-repeat;
+  background-position: -33px -60px;
+  width: 19px;
+  height: 11px;
+  display: inline-block;
+  margin: 0 6px;
+  vertical-align: middle;
+}
+
+#search-history {
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+  background-repeat: no-repeat;
+  background-position: -87px -60px;
+  width: 9px;
+  height: 4px;
+  display: inline-block;
+  margin: 0 6px;
+  vertical-align: middle;
 }
 
 #search-image {
@@ -185,6 +207,61 @@ nav li:nth-child(6) span:first-child {
   width: 25px;
   background-position: -70px -285px;
 }
+
+nav li:nth-child(7) span:first-child {
+  width: 35px;
+  background-position: -125px -130px;
+}
+
+nav li:nth-child(8) span:first-child {
+  width: 26px;
+  background-position: -279px -208px;
+}
+
+nav li:nth-child(9) span:first-child {
+  width: 26px;
+  background-position: -128px -104px;
+}
+
+nav li:nth-child(10) span:first-child {
+  width: 26px;
+  background-position: -36px -259px;
+}
+
+nav li:nth-child(11) span:first-child {
+  width: 39px;
+  background-position: -151px -156px;
+}
+
+nav li:nth-child(12) span:first-child {
+  width: 26px;
+  background-position: -279px -130px;
+}
+
+nav li:nth-child(13) span:first-child {
+  width: 26px;
+  background-position: -234px -233px;
+}
+
+nav li:nth-child(14) span:first-child {
+  width: 26px;
+  background-position: -72px -259px;
+}
+
+nav li:nth-child(15) span:first-child {
+  width: 13px;
+  background-position: -140px -78px;
+}
+
+nav li:nth-child(16) span:first-child {
+  width: 26px;
+  background-position: -279px 0;
+}
+
+nav li.more:first-child span:first-child {
+  width: 55px;
+  background-position: 0 -104px;
+}
 /*float: 둥둥, 형제안으로 but 피해서 */
 /*overflow visible-> 기본값, auto-> 같이 크기조정, hidden->짤*/
 
@@ -206,4 +283,13 @@ nav li:nth-child(6) span:first-child {
   margin-top: -9px;
   color: #00ab33;
   font-size: 16px;
+}
+
+#rank-title {
+  letter-spacing: -1px;
+  font-size: 14px;
+}
+
+main {
+  background-color: #f2f4f7;
 }
