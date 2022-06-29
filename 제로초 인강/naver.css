@@ -6,13 +6,13 @@
 자식은 바로 안에 있는거 '>' 사용 효과 똑같아서 보통은 생략 */
 /* #은 id 가리킴, div는 생략하능 시멘트는 안됨 */
 
-/* 클래스는 '.' 선택자 */
 * {
   /* 별표 에스터리스크는 모든 테그 설정*/
   box-sizing: border-box; /*모든 테그의 박스 크기는 컨텐츠가 아니라 볼더를 기준으로 해라*/
 }
 
 .blind {
+  /* 클래스는 '.' 선택자 */
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -40,6 +40,8 @@
     background-repeat: no-repeat; 한번에! */
   background: url(./sp_search.png) -4px -4px no-repeat;
   vertical-align: middle; /*정렬방식 선택후 형제테그 높이 맞추기*/
+  position: relative;
+  top: -6px;
 }
 
 #header-search h1 span {
@@ -59,12 +61,16 @@
   display: inline-block;
   border: 2px solid #03cf5d; /*헥스 표기법*/
   vertical-align: middle;
+  position: relative;
 }
 
 #header-search fieldset input {
   border: none;
   padding: 0; /*4방향 모두 0으로*/
   outline: none; /*눌렀을때 생기는 테두리제거*/
+  vertical-align: top;
+  width: 405px; /*input은 기본 inline-block*/
+  height: 23px;
 }
 
 #header-search fieldset button {
@@ -73,13 +79,16 @@
   border: none;
   padding: 0;
   background: #03cf5d;
+  position: absolute;
+  right: -2px;
+  top: -1px;
 }
 
 #search-image {
   /* # 앞에 span 생략 */
   background-image: url(./sp_search.png);
   background-position: -3px -60px; /*사진 위치찾기*/
-  background-repeat: none;
+  background-repeat: no-repeat;
   width: 21px;
   height: 21px;
   display: inline-block; /*span은 기본 inline인데 inline은 크기 조절이 안된다.*/
