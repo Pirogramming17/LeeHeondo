@@ -94,3 +94,6 @@
   display: inline-block; /*span은 기본 inline인데 inline은 크기 조절이 안된다.*/
   margin: 14px; /*마진을 맞춰서 가운데정렬*/
 }
+
+/***position: 기본 static, relative는 자신static에서 설정한만큼 상대적으로 이동****/
+/* absolute는 자신의 컨테이닝블록(static이 아닌 가장 가까운 부모 테그)을 기반하여 위치  */
