@@ -1,0 +1,126 @@
+* {
+  /* 별표 에스터리스크는 모든 테그 설정*/
+  box-sizing: border-box; /*모든 테그의 박스 크기는 컨텐츠가 아니라 볼더를 기준으로 해라*/
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Alliance No.1", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-feature-settings: "ss02" on, "ss01" on;
+  background-color: rgb(158, 159, 179);
+}
+
+.blind {
+  /* 클래스는 '.' 선택자 */
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  height: 1px;
+}
+
+.center-align {
+  /* margin: 0 auto -> 중앙정렬 */
+  margin: 0 auto;
+  width: 1080px; /*꽉안차게 설정*/
+}
+
+#cat {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background: url(./logo.svg) 0px 0px no-repeat;
+  vertical-align: middle;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+nav ul {
+  display: inline-block;
+  margin: 10;
+  padding: 5 0 0 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block; /*옆에 바로 붙도록*/
+}
+
+nav li span {
+  padding: 5px;
+}
+
+div {
+  display: inline-block;
+}
+
+#right-info fieldset {
+  margin-left: 150px;
+  width: 200px;
+  height: 30px;
+  display: inline-block;
+  border: 2px solid black;
+  vertical-align: middle;
+  position: relative;
+}
+
+#built-for fieldset {
+  margin-left: 200px;
+  width: 450px;
+  height: 300px;
+  display: inline-block;
+  border: 2px solid rgb(158, 159, 179);
+  vertical-align: middle;
+  position: relative;
+}
+
+#big-info fieldset {
+  margin-left: 100px;
+  width: 330px;
+  height: 400px;
+  display: inline-block;
+  border: 2px solid black;
+  vertical-align: middle;
+  position: relative;
+}
+
+#right-info fieldset input {
+  border: none;
+  outline: none; /*눌렀을때 생기는 테두리제거*/
+  vertical-align: top;
+  width: 150px; /*input은 기본 inline-block*/
+  height: 20px;
+}
+
+#right-info button {
+  width: 70px;
+  height: 30px;
+  border: none;
+  background: grey;
+  position: relative;
+  right: 0px;
+  top: -4px;
+}
+main h3 {
+  margin: 5px;
+}
+
+main input {
+  height: 30px;
+  width: 300px;
+}
+
+main button {
+  width: 300px;
+  height: 50px;
+  border: none;
+  background: rgb(44, 184, 58);
+  position: relative;
+  right: 0px;
+  top: -4px;
+}
