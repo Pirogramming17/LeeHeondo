@@ -127,7 +127,7 @@ nav li:first-child span:first-child {
   /*첫번째 자식인 li의 첫번째 자식인 span*/
   width: 25px;
   background-position: 0 -285px;
-  margin-left: 0; /*위치는 아래일수록, 테그가 동메달, class가 은메달, id가 금메달*/
+  margin-left: 0; /*-->덮어씌우기 위치는 아래일수록, 테그가 동메달, class, 의사클래스:가 은메달, id가 금메달*/
 }
 
 nav li:nth-child(2) span:first-child {
@@ -154,3 +154,5 @@ nav li:nth-child(6) span:first-child {
   width: 25px;
   background-position: -70px -285px;
 }
+/*float: 둥둥, 형제안으로 but 피해서 */
+/*overflow visible-> 기본값, auto-> 같이 크기조정, hidden->짤*/
