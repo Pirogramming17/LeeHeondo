@@ -1,0 +1,7 @@
+/* 선택자(selector) -> html의 태그 선택*/
+/* Cascading Style Sheet */
+
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
