@@ -7,6 +7,11 @@
 /* #은 id 가리킴, div는 생략하능 시멘트는 안됨 */
 
 /* 클래스는 '.' 선택자 */
+* {
+  /* 별표 에스터리스크는 모든 테그 설정*/
+  box-sizing: border-box; /*모든 테그의 박스 크기는 컨텐츠가 아니라 볼더를 기준으로 해라*/
+}
+
 .blind {
   position: absolute;
   overflow: hidden;
@@ -31,9 +36,10 @@
   height: 48px;
   display: inline-block;
   /* background-image: url(./sp_search.png);
-  background-position: -4px -4px;
-  background-repeat: no-repeat; 한번에! */
+    background-position: -4px -4px;
+    background-repeat: no-repeat; 한번에! */
   background: url(./sp_search.png) -4px -4px no-repeat;
+  vertical-align: middle; /*정렬방식 선택후 형제테그 높이 맞추기*/
 }
 
 #header-search h1 span {
@@ -51,5 +57,12 @@
   width: 521px;
   height: 49;
   display: inline-block;
-  border: 2px solid #03cf5d;
+  border: 2px solid #03cf5d; /*헥스 표기법*/
+  vertical-align: middle;
+}
+
+#header-search fieldset input {
+  border: none;
+  padding: 0; /*4방향 모두 0으로*/
+  outline: none; /*눌렀을때 생기는 테두리제거*/
 }
