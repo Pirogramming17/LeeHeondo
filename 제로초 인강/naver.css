@@ -292,4 +292,6 @@ nav li.more:first-child span:first-child {
 
 main {
   background-color: #f2f4f7;
+  display: inline-block;
+  width: 100%;
 }
