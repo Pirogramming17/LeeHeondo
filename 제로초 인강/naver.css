@@ -15,6 +15,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
 }
 
 .blind {
@@ -32,8 +33,13 @@ body {
   width: 1080px; /*꽉안차게 설정*/
 }
 
+header {
+  height: 170px;
+}
+
 #header-top {
   float: right;
+  margin-top: 8px;
 }
 
 #header-top span {
@@ -42,10 +48,15 @@ body {
   font-size: 11px;
   line-height: 22px;
 }
+
+#header-search {
+  clear: both; /*header-top의 float: right 헤제-> float공간만큼 내려옴*/
+  padding-top: 12px;
+}
+
 /* a테그는 밑줄이 있을 수 있으니 없애주기 */
 #header-search a {
   text-decoration: none;
-  clear: both; /*header-top의 float: right 헤제-> float공간만큼 내려옴*/
 }
 
 /*block-> 전체 다 차지 inline-block-> 설정한 width, hight만큼 차지 inline-> 컨텐츠크기만큼 자동차지 */
@@ -59,7 +70,8 @@ body {
   background: url(./sp_search.png) -4px -4px no-repeat;
   vertical-align: middle; /*정렬방식 선택후 형제테그 높이 맞추기*/
   position: relative;
-  top: -6px;
+  top: -5px;
+  left: 1px;
 }
 
 #header-search h1 span {
@@ -71,7 +83,7 @@ body {
 
 /* margin->border->padding->contents */
 #header-search fieldset {
-  margin-left: 20px;
+  margin-left: 18px;
   /* 시계방향px */
   padding: 12px 0 12px 10px;
   width: 521px;
@@ -117,13 +129,27 @@ body {
 /* absolute는 자신의 컨테이닝블록(static이나 relative인(-> inline이 아닌) 가장 가까운 부모 테그)을 기반하여 위치  */
 /* position: fixed 는 스크롤해도 위치그대로 */
 
+nav {
+  height: 46px;
+  border-top: 1px solid #f1f3f6; /*solid는 직선*/
+  border-bottom: 1px solid #d1d8e4;
+}
+
 nav ul {
+  display: inline-block;
   margin: 0;
-  padding: 0;
+  padding: 16px 0 0 4px;
   list-style: none;
 }
 nav li {
   display: inline-block; /*옆에 바로 붙도록*/
+}
+
+nav li:first-child span:first-child {
+  /*첫번째 자식인 li의 첫번째 자식인 span*/
+  width: 25px;
+  background-position: 0 -285px;
+  margin-left: 0; /*-->덮어씌우기 위치는 아래일수록, 테그가 동메달, class, 의사클래스:가 은메달, id가 금메달*/
 }
 
 nav li span:first-child {
@@ -132,14 +158,7 @@ nav li span:first-child {
   display: inline-block; /*span은 기본 inline*/
   background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
   background-repeat: no-repeat;
-  margin-left: 14px;
-}
-
-nav li:first-child span:first-child {
-  /*첫번째 자식인 li의 첫번째 자식인 span*/
-  width: 25px;
-  background-position: 0 -285px;
-  margin-left: 0; /*-->덮어씌우기 위치는 아래일수록, 테그가 동메달, class, 의사클래스:가 은메달, id가 금메달*/
+  margin-left: 10px;
 }
 
 nav li:nth-child(2) span:first-child {
@@ -168,3 +187,23 @@ nav li:nth-child(6) span:first-child {
 }
 /*float: 둥둥, 형제안으로 but 피해서 */
 /*overflow visible-> 기본값, auto-> 같이 크기조정, hidden->짤*/
+
+.nav-divider {
+  display: inline-block;
+  margin: 18px 16px 0;
+  width: 1px;
+  height: 14px;
+  background: #ebeef3;
+}
+
+#search-ranking {
+  position: absolute;
+  top: 16px;
+  right: 100px;
+}
+
+#rank-number {
+  margin-top: -9px;
+  color: #00ab33;
+  font-size: 16px;
+}
