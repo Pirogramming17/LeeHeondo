@@ -115,16 +115,19 @@ nav li {
 }
 
 nav li span:first-child {
+  /*모든 li의 첫번째 자식 span*/
   height: 16px;
-  display: inline-block;
+  display: inline-block; /*span은 기본 inline*/
   background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
   background-repeat: no-repeat;
+  margin-left: 14px;
 }
 
 nav li:first-child span:first-child {
   /*첫번째 자식인 li의 첫번째 자식인 span*/
   width: 25px;
   background-position: 0 -285px;
+  margin-left: 0; /*위치는 아래일수록, 테그가 동메달, class가 은메달, id가 금메달*/
 }
 
 nav li:nth-child(2) span:first-child {
