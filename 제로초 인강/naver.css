@@ -26,7 +26,7 @@ body {
   height: 1px;
 }
 
-#header-center {
+.center-align {
   /* margin: 0 auto -> 중앙정렬 */
   margin: 0 auto;
   width: 1080px; /*꽉안차게 설정*/
@@ -104,3 +104,50 @@ body {
 /***position: 기본 static, relative는 자신static에서 설정한만큼 상대적으로 이동****/
 /* absolute는 자신의 컨테이닝블록(static이나 relative인(-> inline이 아닌) 가장 가까운 부모 테그)을 기반하여 위치  */
 /* position: fixed 는 스크롤해도 위치그대로 */
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block; /*옆에 바로 붙도록*/
+}
+
+nav li span:first-child {
+  height: 16px;
+  display: inline-block;
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
+  background-repeat: no-repeat;
+}
+
+nav li:first-child span:first-child {
+  /*첫번째 자식인 li의 첫번째 자식인 span*/
+  width: 25px;
+  background-position: 0 -285px;
+}
+
+nav li:nth-child(2) span:first-child {
+  width: 27px;
+  background-position: -279px -52px;
+}
+
+nav li:nth-child(3) span:first-child {
+  width: 40px;
+  background-position: -100px -182px;
+}
+
+nav li:nth-child(4) span:first-child {
+  width: 40px;
+  background-position: -101px -156px;
+}
+
+nav li:nth-child(5) span:first-child {
+  width: 26px;
+  background-position: -279px -156px;
+}
+
+nav li:nth-child(6) span:first-child {
+  width: 25px;
+  background-position: -70px -285px;
+}
