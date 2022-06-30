@@ -18,6 +18,19 @@ body {
   font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
 .blind {
   /* 클래스는 '.' 선택자 */
   position: absolute;
@@ -51,7 +64,7 @@ header {
 
 #header-search {
   clear: both; /*header-top의 float: right 헤제-> float공간만큼 내려옴*/
-  padding-top: 12px;
+  padding-top: 45px;
 }
 
 /* a테그는 밑줄이 있을 수 있으니 없애주기 */
@@ -380,7 +393,7 @@ main {
 #main-newsstand li img {
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); /*자기높이의 반만큼 올려줌*/
 }
 
 #main-weather {
