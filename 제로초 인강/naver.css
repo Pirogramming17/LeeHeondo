@@ -302,6 +302,7 @@ main {
 }
 
 #main-first-block {
+  /*자식들을 감싸는 부모만 inline-block / 자식들은 float: left만*/
   display: inline-block;
   width: 100%;
 }
