@@ -312,6 +312,8 @@ nav ul {
   right: 0;
 }
 
+/*자식의 z-index가 아무리 높아도 부모가 지면 진다. 부모끼리 리그*/
+
 #search-ranking:hover ul {
   display: inline-block;
 }
