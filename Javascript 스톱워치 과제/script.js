@@ -48,6 +48,11 @@ buttonReset.onclick = function () {
 
 buttonStop.addEventListener("click", function () {
   clearInterval(intervalId);
+  const newCheckbox = document.createElement("input");
+  newCheckbox.type = "checkbox";
+  newCheckbox.name = "select";
+  newCheckbox.classList.add("memberChk");
+
   const newDiv = document.createElement("div");
   newDiv.textContent =
     appendMinutes.textContent +
@@ -55,11 +60,27 @@ buttonStop.addEventListener("click", function () {
     appendSeconds.textContent +
     ":" +
     appendTens.textContent;
+  // newDiv.classList.add('good')
+  newDiv.appendChild(newCheckbox);
   record.appendChild(newDiv);
 });
 
 buttonDelete.addEventListener("click", function () {
-  while (record.hasChildNodes()) {
-    record.removeChild(record.firstChild);
+  var objs = document.querySelectorAll(".memberChk");
+  var objs2 = record.childNodes;
+  var count = 0;
+  for (var i = 0; i < objs.length; i++) {
+    if (objs[i].checked) {
+      objs2[i - count].remove();
+      count++;
+    }
   }
 });
+
+function selectAll(selectAll) {
+  const checkboxes = document.getElementsByName("select");
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = selectAll.checked;
+  });
+}

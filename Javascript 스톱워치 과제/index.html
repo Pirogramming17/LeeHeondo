@@ -19,7 +19,18 @@
       <button id="bt__start">Start</button>
       <button id="bt__stop">Stop</button>
       <button id="bt__reset">Reset</button>
-      <button id="bt__delete">Delete</button>
+      <div id="record__box">
+        <input
+          id=""
+          type="checkbox"
+          name="selectall"
+          onclick="selectAll(this)"
+          class="allMembers"
+        />
+
+        <span>구간기록</span>
+        <a id="bt__delete"><img src="trash.svg" /></a>
+      </div>
       <div id="record__list"></div>
     </div>
     <script src="script.js"></script>
