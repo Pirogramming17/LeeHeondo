@@ -10,3 +10,13 @@ while True:
     
     else:
         break
+
+if ip == 1:
+    num +=1
+    print('playerA : ',num)
+elif ip == 2:
+    num +=2
+    print('playerA : ',num)
+else:
+    num +=3
+    print('playerA : ',num)
