@@ -60,7 +60,6 @@ buttonStop.addEventListener("click", function () {
     appendSeconds.textContent +
     ":" +
     appendTens.textContent;
-  // newDiv.classList.add('good')
   newDiv.appendChild(newCheckbox);
   record.appendChild(newDiv);
 });
