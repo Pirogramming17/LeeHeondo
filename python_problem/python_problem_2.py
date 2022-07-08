@@ -1,8 +1,11 @@
-def brGame():
-    num = 0
-    player = 'A'
+import random
 
-    def round(num, player):
+def brGame():
+
+    num = 0
+    player = 'computer'
+
+    def round(num):
         while True:
             try:
                 ip = int(input("부를 숫자의 개수를 입력하세요(1, 2, 3만 입력가능):"))
@@ -15,25 +18,19 @@ def brGame():
                 
         for i in range(ip):
             num += 1
-            print(f'player{player} : {num}')
+            print(f'player: {num}')
         return num
-        
+
     while num < 31:
-        num = round(num, player)
-        if player == 'A':
-            player = 'B'
+        if player == 'computer':
+            for i in range(random.randint(1,3)):
+                num += 1
+                print(f'computer: {num}')
+            player = 'player'
         else:
-            player = 'A'
+            num = round(num)
+            player = 'computer'   
 
-    if player == 'A':
-        player = 'B'
-    else:
-        player = 'A'       
-
-    print(f'player{player} win!')
+    print(f'{player} win!')
     
-
-
 brGame()
-
-
