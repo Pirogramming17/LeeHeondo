@@ -92,6 +92,7 @@ while True :
                 if name == students[i].name:
                     a = False
                     Menu4(students,i)
+                    #break
             if a:
                 print("Not exist name!") 
         else:
