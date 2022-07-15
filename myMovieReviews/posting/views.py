@@ -16,7 +16,7 @@ def post_list(request):
     return render(request, 'posting/post_list.html', {'posts': posts})
 
 def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk) # pk(게시글의 고유한 값)에 해당하는 Post가 없을 경우
+    post = get_object_or_404(Post, pk=pk) # pk(게시글의 고유한 값)에 해당하는 Post가 없을 경우 또는 가져오기
     return render(request, 'posting/post_detail.html', {'post': post}) 
 
 def post_new(request):
@@ -30,4 +30,18 @@ def post_new(request):
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm()
+    return render(request, 'posting/post_edit.html', {'form': form})
+
+def post_edit(request, pk):
+    post = get_object_or_404(Post, pk=pk) # 수정하고자 하는 게시글의 모델로 가져온다
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post) #모델 인스턴스로 넘겨주기
+        if form.is_valid():
+            post = form.save(commit=False)
+            # post.author = request.user
+            post.updated_at= timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
     return render(request, 'posting/post_edit.html', {'form': form})
