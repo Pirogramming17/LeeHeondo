@@ -27,7 +27,7 @@ def post_new(request):
             # post.author = request.user
             post.created_at = timezone.now()
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('/')
     else:
         form = PostForm()
     return render(request, 'posting/post_edit.html', {'form': form})
@@ -45,3 +45,8 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'posting/post_edit.html', {'form': form})
+    
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('/')
