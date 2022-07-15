@@ -10,6 +10,12 @@
     ><span class="glyphicon glyphicon-trash"></span
   ></a>
   <h1>{{ post.title }}</h1>
+  <p><span>개봉년도 </span>{{ post.open_date }}</p>
+  <p><span>감독 </span>{{ post.director }}</p>
+  <p><span>주연 </span>{{ post.actor }}</p>
+  <p><span>장르 </span>{{ post.genre }}</p>
+  <p><span>별점 </span>{{ post.star }}</p>
+  <p><span>러닝타임 </span>{{ post.running_time }}</p>
   <p>{{ post.review }}</p>
 </div>
 {% endblock %}

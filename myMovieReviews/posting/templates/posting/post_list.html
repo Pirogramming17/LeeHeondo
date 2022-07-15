@@ -2,6 +2,8 @@
 <div class="post">
   <div class="date">{{ post.created_at }}</div>
   <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-  <p>{{ post.review }}</p>
+  <p><span>개봉년도 </span>{{ post.open_date }}</p>
+  <p><span>장르 </span>{{ post.genre }}</p>
+  <p><span>별점 </span>{{ post.star }}</p>
 </div>
 {% endfor %} {% endblock %}
