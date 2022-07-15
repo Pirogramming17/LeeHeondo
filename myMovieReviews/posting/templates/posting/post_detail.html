@@ -1,0 +1,9 @@
+{% extends 'posting/base.html' %} {% block content %}
+<div class="post">
+  {% if post.created_at %}
+  <div class="date">{{ post.created_at }}</div>
+  {% endif %}
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.review }}</p>
+</div>
+{% endblock %}
