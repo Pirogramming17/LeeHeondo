@@ -1,9 +1,20 @@
-{% extends 'posting/base.html' %} {% block content %} {% for post in posts %}
+{% extends 'posting/base.html' %} {% block content %}
+<form method="GET" action="{% url 'post_list' %}">
+  {% csrf_token %}
+  <div class="col-4">
+    <select name="sort" id="sort">
+      <option value="title" id="title">제목순</option>
+      <option value="star" id="star">별점순</option>
+      <option value="running" id="running">상영시간순</option>
+    </select>
+    <button class="btn btn-primary" type="submit" value="">정렬</button>
+</form>
+{% for post in posts %}
 <div class="post">
-  <div class="date">{{ post.created_at }}</div>
   <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
   <p><span>개봉년도 </span>{{ post.open_date }}</p>
   <p><span>장르 </span>{{ post.genre }}</p>
   <p><span>별점 </span>{{ post.star }}</p>
+  <p><span>상영시간 </span>{{ post.running_time}}</p>
 </div>
 {% endfor %} {% endblock %}

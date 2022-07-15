@@ -1,8 +1,5 @@
 {% extends 'posting/base.html' %} {% block content %}
 <div class="post">
-  {% if post.created_at %}
-  <div class="date">{{ post.created_at }}</div>
-  {% endif %}
   <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"
     ><span class="glyphicon glyphicon-pencil"></span
   ></a>
@@ -15,7 +12,7 @@
   <p><span>주연 </span>{{ post.actor }}</p>
   <p><span>장르 </span>{{ post.genre }}</p>
   <p><span>별점 </span>{{ post.star }}</p>
-  <p><span>러닝타임 </span>{{ post.running_time }}</p>
+  <p><span>러닝타임 </span>{{ post.running_time }}<span>분</span></p>
   <p>{{ post.review }}</p>
 </div>
 {% endblock %}
