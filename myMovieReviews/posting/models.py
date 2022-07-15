@@ -6,7 +6,18 @@ from django.utils import timezone
 class Post(models.Model):
     title = models.CharField(max_length= 100, verbose_name="제목")
     open_date = models.CharField(max_length= 50, verbose_name="개봉연도")
-    genre = models.CharField(max_length= 50, verbose_name="장르")
+    GENRE_CHOICES = [
+        ('ACTION', 'Action'),
+        ('COMEDY', 'Comedy'),
+        ('THRILLER', 'Thriller'),
+        ('ROMANTIC', 'Romantic'),
+        ('SF', 'SF'),
+        ('CHOICE', '선택'),
+    ]
+    genre = models.CharField(
+        max_length= 10, choices = GENRE_CHOICES,
+        default = 'CHOICE',
+    )
     star = models.CharField(max_length= 50, verbose_name="별점")
     running_time = models.CharField(max_length= 50, verbose_name="러닝타임")
     review = models.TextField(verbose_name="리뷰")
