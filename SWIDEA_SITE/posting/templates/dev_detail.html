@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<div>DevTool Detail</div>
+<div>개발툴 세부내용 페이지 입니다.</div>
+<article>
+  <h2>{{devtool.title}}</h2>
+  <p>{{devtool.kind}}</p>
+  <p>{{devtool.description}}</p>
+</article>
+
+<div>
+  <form action="{% url 'dev_delete' devtool.id %}" method="post">
+    {% csrf_token %}
+    <button>삭제</button>
+  </form>
+</div>
+<a href="{% url 'dev_list' %}">목록</a>
+<a href="{% url 'dev_update' devtool.id %}">수정</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<div>DevTool Register</div>
+<div>개발툴 등록 페이지 입니다.</div>
+<form action="{% url 'dev_create' %}" method="post">
+  {% csrf_token %}
+  <h2>
+    <input type="text" name="name" />
+  </h2>
+  <p>
+    <input type="text" name="kind" />
+  </p>
+  <textarea name="description" id="" cols="30" rows="10"></textarea>
+
+  <div>
+    <input type="submit" value="SUBMIT" />
+  </div>
+</form>
+{% endblock %}
