@@ -1,17 +1,46 @@
 {% extends 'base.html' %} {% block content %}
-<div>Idea List</div>
-<div>나의 아이디어를 잊지 말고 기록해 보세요.</div>
-{% for idea in ideas %}
-<article>
-  {% if idea.photo %}
-  <p>
-    <img src="{{ idea.photo.url }}" />
-  </p>
-  {% endif %}
+<div class="d-flex justify-content-around">
   <div>
-    <a href="{% url 'idea_detail' idea.id %}"><span>{{idea.title}}</span></a>
-    <!-- <span>{{tool.kind}}</span>
-    <span>{{tool.description}}</span> -->
+    <div>Idea List</div>
+    <div>나의 아이디어를 잊지 말고 기록해 보세요.</div>
   </div>
-</article>
-{% endfor %} {% endblock %}
+
+  <form method="GET" action="{% url 'idea_list' %}">
+    {% csrf_token %}
+    <div>
+      <select name="sort" id="sort">
+        <option value="last" id="last">등록순</option>
+        <option value="first" id="first">최신순</option>
+        <option value="title" id="title">이름순</option>
+      </select>
+      <button class="btn btn-primary" type="submit" value="">정렬</button>
+    </div>
+  </form>
+</div>
+<div class="d-flex justify-content-around">
+  <div class="row">
+    {% for idea in ideas %}
+    <div class="col-3">
+      <article class="col border border-primary">
+        {% if idea.photo %}
+        <span>
+          <img src="{{ idea.photo.url }}" class="img-fluid" />
+        </span>
+        {% endif %}
+        <div>
+          <a href="{% url 'idea_detail' idea.id %}"
+            ><span>{{idea.title}}</span></a
+          >
+        </div>
+        <span>예상 개발 툴:</span>
+        <span>{{idea.dev}}</span>
+        <div>
+          <span>아이디어 관심도:</span>
+          <span>{{idea.interest}}</span>
+        </div>
+      </article>
+    </div>
+    {% endfor %}
+  </div>
+  {% endblock %}
+</div>

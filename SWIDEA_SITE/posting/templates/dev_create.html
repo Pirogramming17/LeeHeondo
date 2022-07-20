@@ -4,13 +4,15 @@
 <form action="{% url 'dev_create' %}" method="post">
   {% csrf_token %}
   <h2>
+    <p>이름: </p>
     <input type="text" name="name" />
   </h2>
   <p>
+    <p>종류:</p>
     <input type="text" name="kind" />
   </p>
+  <p>개발툴 설명: </p>
   <textarea name="description" id="" cols="30" rows="10"></textarea>
-
   <div>
     <input type="submit" value="SUBMIT" />
   </div>

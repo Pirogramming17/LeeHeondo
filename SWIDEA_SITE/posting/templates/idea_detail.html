@@ -3,11 +3,18 @@
 <div>아이디어 세부내용 페이지 입니다.</div>
 <article>
   <h2>{{idea.title}}</h2>
-  {% if post.photo %}
-  <p>
-    <img src="{{ idea.photo.url }}" />
-  </p>
+  {% if idea.photo %}
+  <div class="col-3">
+    <p>
+      <img src="{{ idea.photo.url }}" class="img-fluid" />
+    </p>
+  </div>
   {% endif %}
+  <p>1) 아이디어 관심도</p>
+  <p>{{idea.interest}}</p>
+  <p>2) 예상 개발 툴</p>
+  <a href="{% url 'dev_detail' num %}">{{idea.dev}}</a>
+  <p>3) 아이디어 설명</p>
   <p>{{idea.content}}</p>
 </article>
 

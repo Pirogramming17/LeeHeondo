@@ -24,7 +24,7 @@ def dev_create(request):
 
         DevTool.objects.create(name=name, kind=kind, description=description)
 
-        return redirect("/")
+        return redirect("/dev/list")
 
     context = {}
 
@@ -49,11 +49,19 @@ def dev_update(request, id):
 def dev_delete(request, id):
     if request.method == "POST":
         DevTool.objects.filter(id=id).delete()
-        return redirect("/") 
+        return redirect("/dev/list") 
 
 # *****************************************************************
 def idea_list(request):
-    ideas = Idea.objects.all()
+    sort = request.GET.get('sort','None')
+    if sort == 'last':
+        ideas = Idea.objects.all().order_by('created_at')
+    elif sort == 'first':
+        ideas = Idea.objects.all().order_by('-created_at')
+    elif sort == 'title':
+        ideas = Idea.objects.all().order_by('title')
+    else:
+        ideas = Idea.objects.all().order_by('title')
     context = {
         "ideas":ideas
     }
@@ -61,38 +69,59 @@ def idea_list(request):
 
 def idea_detail(request, id):
     idea = Idea.objects.get(id=id) 
+    devtools = DevTool.objects.all()
+    num = 0
+    for devtool in devtools:
+        if devtool.name == idea.dev:
+            num = devtool.id
+            break
     context = {
         "idea": idea,
+        "num":num
     }
     return render(request, template_name="idea_detail.html", context=context)
 
 def idea_create(request):
+    devtools = DevTool.objects.all()
+    # dev_list = []
+
+    # for k in devtools:
+    #     dev_list.append(str(k.name))
+
+    # print(dev_list)
+
+    context = {
+        # "dev_list":dev_list
+        "devtools":devtools
+    }
+
     if request.method == "POST":
         title = request.POST["title"]
         req_photo = request.FILES["photo"]
         content = request.POST["content"]
-
-        Idea.objects.create(title=title, photo=req_photo, content=content)
+        interest= request.POST["interest"]
+        dev = request.POST["dev"]
+        Idea.objects.create(title=title, photo=req_photo, content=content, interest=interest, dev=dev)
 
         return redirect("/")
-
-    context = {}
 
     return render(request, template_name="idea_create.html", context=context)
 
 def idea_update(request, id):
+    devtools = DevTool.objects.all()
     if request.method == "POST":
         title = request.POST["title"]
-        # photo = request.POST["photo"]
         content = request.POST["content"]
+        interest= request.POST["interest"]
 
-        Idea.objects.filter(id=id).update(title=title, content=content)
+        Idea.objects.filter(id=id).update(title=title, content=content, interest=interest)
 
         return redirect(f"/idea/detail/{id}")
 
     idea = Idea.objects.get(id=id)
     context = {
-        "idea": idea
+        "idea": idea,
+        "devtools":devtools
     }
     return render(request, template_name="idea_edit.html", context=context)
 
