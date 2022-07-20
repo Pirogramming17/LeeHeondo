@@ -18,6 +18,8 @@
   <body>
     <div class="d-flex justify-content-around">
       <div><a href="/">My SW IDEA Manage</a></div>
+      <a href="{% url 'idea_create' %}"><div>아이디어 등록</div></a>
+      <a href="{% url 'idea_list' %}"><div>아이디어 관리</div></a>
       <a href="{% url 'dev_create' %}"><div>개발툴 등록</div></a>
       <a href="{% url 'dev_list' %}"><div>개발툴 관리</div></a>
     </div>

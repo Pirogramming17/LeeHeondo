@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<div>Idea Register</div>
+<div>아이디어 등록 페이지 입니다.</div>
+<form
+  action="{% url 'idea_create' %}"
+  method="post"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %}
+  <h2>
+    <input type="text" name="title" />
+  </h2>
+  <p>
+    <input type="file" name="photo" />
+  </p>
+  <textarea name="content" id="" cols="30" rows="10"></textarea>
+
+  <div>
+    <input type="submit" value="SUBMIT" />
+  </div>
+</form>
+{% endblock %}

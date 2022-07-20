@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<div>Idea Detail</div>
+<div>아이디어 세부내용 페이지 입니다.</div>
+<article>
+  <h2>{{idea.title}}</h2>
+  {% if post.photo %}
+  <p>
+    <img src="{{ idea.photo.url }}" />
+  </p>
+  {% endif %}
+  <p>{{idea.content}}</p>
+</article>
+
+<div>
+  <form action="{% url 'idea_delete' idea.id %}" method="post">
+    {% csrf_token %}
+    <button>삭제</button>
+  </form>
+</div>
+<a href="{% url 'idea_list' %}">목록</a>
+<a href="{% url 'idea_update' idea.id %}">수정</a>
+{% endblock %}

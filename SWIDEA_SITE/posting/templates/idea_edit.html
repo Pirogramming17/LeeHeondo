@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<div>Idea Detail Update</div>
+<div>아이디어 세부내용 수정 페이지 입니다.</div>
+<form action="{% url 'idea_update' idea.id %}" method="post">
+  {% csrf_token %}
+  <h2>
+    <input type="text" name="title" value="{{idea.title}}" />
+  </h2>
+  <textarea name="content" id="" cols="30" rows="10">
+    {{idea.content}}</textarea
+  >
+  <div>
+    <input type="submit" value="SUBMIT" />
+  </div>
+</form>
+{% endblock %}

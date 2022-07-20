@@ -5,8 +5,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.dev_list, name='dev_list'),
+    path('', views.idea_list, name='idea_list'),
     path('dev/create', views.dev_create, name = "dev_create"), 
+    path('dev/list', views.dev_list, name = "dev_list"), 
     path('dev/detail/<int:id>', views.dev_detail, name="dev_detail"),
     path('dev/update/<int:id>', views.dev_update, name="dev_update"),
     path("dev/delete/<int:id>", views.dev_delete, name="dev_delete"),

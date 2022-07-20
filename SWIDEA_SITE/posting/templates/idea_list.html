@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    안녕하세요
-  </body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<div>Idea List</div>
+<div>나의 아이디어를 잊지 말고 기록해 보세요.</div>
+{% for idea in ideas %}
+<article>
+  {% if idea.photo %}
+  <p>
+    <img src="{{ idea.photo.url }}" />
+  </p>
+  {% endif %}
+  <div>
+    <a href="{% url 'idea_detail' idea.id %}"><span>{{idea.title}}</span></a>
+    <!-- <span>{{tool.kind}}</span>
+    <span>{{tool.description}}</span> -->
+  </div>
+</article>
+{% endfor %} {% endblock %}
