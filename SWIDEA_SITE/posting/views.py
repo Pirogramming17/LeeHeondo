@@ -11,9 +11,18 @@ def dev_list(request):
 
 def dev_detail(request, id):
     devtool = DevTool.objects.get(id=id) 
+    ideas = Idea.objects.all()
+
+    # num = 0
+    # for idea in ideas:
+    #     if devtool.name == idea.dev:
+    #         num = idea.id
+    #         break
     context = {
         "devtool": devtool,
+        "ideas":ideas,
     }
+
     return render(request, template_name="dev_detail.html", context=context)
 
 def dev_create(request):
